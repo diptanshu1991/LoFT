@@ -1,0 +1,13 @@
+# train_config.yaml
+
+model_name: TinyLlama/TinyLlama-1.1B-Chat-v1.0
+dataset_path: data/finetune_dataset_v2_structured.json
+output_dir: adapters/loft-v2/adapter-r8-layernorm
+num_train_epochs: 3
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 4
+max_length: 128
+use_safetensors: false
+fp16: true
+use_gradient_checkpointing: true
+unfreeze_layernorm: true

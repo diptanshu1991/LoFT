@@ -1,0 +1,8 @@
+torch==2.2.2
+transformers==4.37.2
+peft==0.8.2
+datasets==2.19.0
+bitsandbytes==0.42.0 ; sys_platform == "linux" or sys_platform == "win32"
+optimum==1.26.1
+numpy==1.26.4
+tqdm==4.67.1
