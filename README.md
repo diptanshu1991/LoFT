@@ -1,8 +1,15 @@
-# 🪶 LoFT CLI — Low-RAM Finetuning Toolkit
+🪶 LoFT CLI — Lightweight Finetuning + Deployment Toolkit for Custom LLMs
 
-> 🧠 Fine-tune open-source LLMs with LoRA on **MacBooks, CPUs, or low-RAM devices**
-> 🛠️ Merge, quantize to GGUF, and run locally via `llama.cpp`
-> 💻 No GPU required
+![License](https://img.shields.io/github/license/diptanshu1991/LoFT)
+![Python](https://img.shields.io/badge/python-3.10+-blue)
+![LoRA](https://img.shields.io/badge/LoRA-compatible-brightgreen)
+
+> 🔧 Customize small language models (1–3B) with LoRA adapters  
+> 💻 Train, quantize, and run entirely on CPU — even an 8GB MacBook  
+> 🧱 Foundation for an adapter-powered GenAI deployment workflow  
+
+✨ Designed for **developers building local GenAI apps**, not just ML researchers.
+
 
 ---
 
@@ -10,22 +17,37 @@
 
 **LoFT CLI** is a lightweight, open-source command-line tool that enables:
 
-✅ Finetuning 1B–3B open-source LLMs with **LoRA**
-✅ Merging adapters and exporting models into **GGUF format** for CPU inference
-✅ Running finetuned models locally via `llama.cpp`
-✅ All on your **MacBook**, **CPU box**, or **low-spec laptop** — no GPU needed
+- ✅ Finetune lightweight LLMs (like TinyLlama) using LoRA
+- ✅ Merge adapters into a standalone Hugging Face model
+- ✅ Export to GGUF format
+- ✅ Quantize to Q4_0 for CPU inference
+- ✅ Run the model locally using `llama.cpp`
+
+Everything works **on MacBooks, CPUs, and low-RAM laptops**.
 
 ---
 
-## 🧩 Core Features
+## 🎯 Why LoFT Exists
 
-| Feature            | Description                                                              |
-| ------------------ | ------------------------------------------------------------------------ |
-| 🏋️ Finetune       | Inject LoRA adapters into Hugging Face models and train on JSON datasets |
-| 🧠 Merge           | Merge base model + adapter into standalone model weights                 |
-| 🪶 Quantize (GGUF) | Convert merged model into GGUF format via `llama.cpp` tooling            |
-| 💬 Chat (WIP)      | Run a CLI-based chatbot locally using quantized model                    |
+While others focus on training giant models in the cloud, LoFT empowers developers to:
 
+- 🖥️ Customize open-source models without GPU dependence
+- 🔌 Deploy LLMs fully offline — for privacy-first applications
+- 🧩 Plug in domain-specific LoRA adapters with one command
+
+Coming soon: **LoFT Recipes** — ready-to-use adapters + fine-tuning guides for real-world use cases like customer support, legal Q&A, and content summarization.
+
+---
+
+## 🧠 TL;DR: Workflow Summary
+
+| Step     | Command         | Output                |
+|----------|-----------------|------------------------|
+| Finetune | `loft finetune` | LoRA adapters (`.safetensors`) |
+| Merge    | `loft merge`    | Merged HF model        |
+| Export   | `loft export`   | GGUF (F32/FP16) model  |
+| Quantize | `loft quantize` | Q4_0 GGUF model        |
+| Chat     | `loft chat`     | Inference CLI (offline) |
 ---
 
 ## 📦 Installation
@@ -34,6 +56,10 @@
 # Clone the repo
 git clone https://github.com/diptanshu1991/LoFT_v1.git
 cd LoFT_v1
+
+# Optional: create a virtual environment
+python3 -m venv venv
+source venv/bin/activate
 
 # Install in development mode
 pip install -e .
@@ -62,7 +88,11 @@ loft finetune \
   --gradient_checkpointing
 ```
 
-> ✅ Works well on low-RAM MacBooks with float-based LoRA adapters
+✅ Supports instruction-tuning format
+
+✅ Works with JSON datasets
+
+✅ Output is a LoRA adapter folder
 
 ---
 
@@ -94,7 +124,8 @@ loft quantize \
   --output_path merged_models/merged_models_q4.gguf \
   --quant_type Q4_0
 ```
-
+✅ Uses llama.cpp's Python or compiled tools
+✅ Output can be used directly with llama.cpp CLI
 > Requires [llama.cpp](https://github.com/ggerganov/llama.cpp) — clone & build using `make`
 
 ---
@@ -110,7 +141,23 @@ loft chat \
 
 > Runs under 1GB RAM. Fast inference on MacBook/CPU. No GPU needed.
 
+📊 Benchmarks (MacBook Air, 8GB RAM)
+
+| Step     | Output                   | Size   | Peak RAM | Time Taken |
+| -------- | ------------------------ | ------ | -------- | ---------- |
+| Finetune | Adapter (`.safetensors`) | 4.3 MB | 308 MB   | 23 min     |
+| Merge    | Merged Model             | 4.2 GB | 322 MB   | 4.7 min    |
+| Export   | GGUF (F32/FP16)          | 2.1 GB | 322 MB   | 83 sec     |
+| Quantize | GGUF (Q4\_0)             | 607 MB | 322 MB   | 21 sec     |
+| Chat     | Response @ 6.9 tok/s     | —      | 322 MB   | 79 sec     |
+
+⚠️ Dataset: 20-sample Dolly-style JSON
+🧪 Also tested on 300 samples (2 epochs = 1.5 hours)
+⚠️ Note: The 300-sample run is a proof-of-concept to validate CPU-only finetuning.  
+For production-quality adapters, larger datasets and GPU training will be recommended.
+
 ---
+
 
 ## 📁 Updated Project Structure
 
