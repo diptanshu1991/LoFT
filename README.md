@@ -54,8 +54,8 @@ Coming soon: **LoFT Recipes** — ready-to-use adapters + fine-tuning guides for
 
 ```bash
 # Clone the repo
-git clone https://github.com/diptanshu1991/LoFT_v1.git
-cd LoFT_v1
+git clone https://github.com/diptanshu1991/LoFT
+cd LoFT
 
 # Optional: create a virtual environment
 python3 -m venv venv
