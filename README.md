@@ -159,7 +159,7 @@ For production-quality adapters, larger datasets and GPU training will be recomm
 ---
 
 
-## 📁 Updated Project Structure
+## 📁 Project Structure
 
 ```bash
 LoFT_v1/
