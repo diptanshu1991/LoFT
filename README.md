@@ -63,6 +63,15 @@ source venv/bin/activate
 
 # Install in development mode
 pip install -e .
+
+#Download Base Model (Optional but Recommended)
+python -c "
+from transformers import AutoModelForCausalLM, AutoTokenizer
+model_id = 'TinyLlama/TinyLlama-1.1B-Chat-v1.0'
+AutoModelForCausalLM.from_pretrained(model_id)
+AutoTokenizer.from_pretrained(model_id)
+"
+
 ```
 
 You now have access to the `loft` CLI.
