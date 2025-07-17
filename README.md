@@ -71,6 +71,15 @@ model_id = 'TinyLlama/TinyLlama-1.1B-Chat-v1.0'
 AutoModelForCausalLM.from_pretrained(model_id)
 AutoTokenizer.from_pretrained(model_id)
 "
+```
+#Install Llama.cpp
+```
+# Clone llama.cpp
+git clone https://github.com/ggerganov/llama.cpp
+
+#build the C++ tools
+cd llama.cpp
+make
 
 ```
 
@@ -79,6 +88,7 @@ You now have access to the `loft` CLI.
 Install dependencies:
 
 ```bash
+cd LoFT
 pip install -r requirements.txt
 ```
 
@@ -92,8 +102,8 @@ Uses `peft` with LoRA adapters (in float16/float32). Trains only LoRA layers.
 loft finetune \
   --model_name TinyLlama/TinyLlama-1.1B-Chat-v1.0 \
   --dataset data/sample_finetune_data.json \
-  --output_dir adapter/adapter_v1 \
-  --num_train_epochs 3 \
+  --output_dir adapter/ \
+  --num_train_epochs 2 \
   --gradient_checkpointing
 ```
 
