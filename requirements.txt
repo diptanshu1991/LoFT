@@ -6,3 +6,5 @@ bitsandbytes==0.42.0 ; sys_platform == "linux" or sys_platform == "win32"
 optimum==1.26.1
 numpy==1.26.4
 tqdm==4.67.1
+accelerate==0.25.0
+sentencepiece==0.1.99
