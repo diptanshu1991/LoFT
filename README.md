@@ -239,7 +239,6 @@ LoFT_v1/
 * [x] Quantization (Q4/Q8)
 * [x] Local CPU Inference
 * [ ] Gradio UI for LoFT Chat
-* [ ] ONNX Export support
 * [ ] SaaS dashboard for inference cost
 * [ ] Adapter Marketplace
 
