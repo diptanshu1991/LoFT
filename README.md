@@ -10,6 +10,7 @@
 
 ✨ Designed for **developers building local GenAI apps**, not just ML researchers.
 
+**❓ Questions? Ideas? Join our [GitHub Discussions](https://github.com/diptanshu1991/LoFT/discussions/1)!**
 
 ---
 
@@ -175,6 +176,8 @@ loft chat \
 ⚠️ Note: The 300-sample run is a proof-of-concept to validate CPU-only finetuning.  
 For production-quality adapters, larger datasets and GPU training will be recommended.
 
+**✨ Impressed by the benchmarks? [Join our mailing list for more updates!](https://docs.google.com/forms/d/e/1FAIpQLSc_36bI8UTde3HF0EDl8GHQuqOvPkWbseadDTFUP0gwFkJI9g/viewform?usp=header)**
+
 ---
 
 
@@ -253,3 +256,16 @@ MIT License — free to use, modify, and distribute.
 ## 🌍 Author
 
 Built by [@diptanshukumar](https://www.linkedin.com/in/diptanshu-kumar) — strategy consultant turned AI builder. Contributions welcome!
+
+
+### 🤝 Community & Support
+
+Have questions, ideas, or want to contribute? Join our community!
+
+* **Stay Up-to-Date:** Want to be the first to know about new features, LoRA recipes, and community updates? Join our mailing list!
+    *Your email will only be used for LoFT project updates and will never be shared with third parties.*
+    [![Join the LoFT Mailing List](https://img.shields.io/badge/Join%20Mailing%20List-Sign%20Up-blue?style=for-the-badge&logo=github)](https://docs.google.com/forms/d/e/1FAIpQLSc_36bI8UTde3HF0EDl8GHQuqOvPkWbseadDTFUP0gwFkJI9g/viewform?usp=header)
+* **Ask Questions & Share Ideas:** [Join our GitHub Discussions](https://github.com/diptanshu1991/LoFT/discussions/1)
+* **Report Bugs:** [Open an Issue](https://github.com/diptanshu1991/LoFT/issues/new/choose)
+* **Connect on LinkedIn:** [@diptanshukumar](https://www.linkedin.com/in/diptanshu-kumar) 
+---
