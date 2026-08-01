@@ -2,15 +2,14 @@
 
 Lightweight finetuning, quantization and local inference for small language models, on CPU.
 
-> **Status: no longer maintained.** I stopped work on LoFT in 2025. Finetuning turned out to be something a team does once and then walks away from, and the users it attracted were mostly hobbyists, so there was no recurring reason to come back to the tool. The code works and the benchmarks below are real. I have left it up as a reference.
-
+> **Status: no longer maintained.** I stopped work on LoFT in 2025. The code works and the benchmarks below are real, but I am not developing it further.
 Customize small models (1-3B) with LoRA adapters. Train, quantize and run entirely on CPU, including on an 8GB MacBook.
 
 ---
 
 ## What LoFT does
 
-- Finetune small LLMs (e.g. TinyLlama) using LoRA
+- Fine-tune small LLMs (e.g. TinyLlama) using LoRA
 - Merge adapters into a standalone Hugging Face model
 - Export to GGUF
 - Quantize to Q4_0 for CPU inference
